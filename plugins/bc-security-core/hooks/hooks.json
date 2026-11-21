@@ -1,0 +1,21 @@
+{
+  "description": "Opt-in bc-security hooks. Off by default; enable per user (plugin options) or per repo (.security/config.json).",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/sensitive-edit.sh" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/pre-commit.sh" }
+        ]
+      }
+    ]
+  }
+}

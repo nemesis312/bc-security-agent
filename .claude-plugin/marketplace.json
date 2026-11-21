@@ -1,0 +1,34 @@
+{
+  "name": "bc-security",
+  "owner": {
+    "name": "Lesther Ruiz"
+  },
+  "description": "Read-only security review agent and domain rule plugins for Claude Code.",
+  "plugins": [
+    {
+      "name": "bc-security-core",
+      "source": "./plugins/bc-security-core",
+      "description": "Read-only security review agent, report format and optional hooks."
+    },
+    {
+      "name": "bc-security-code",
+      "source": "./plugins/bc-security-code",
+      "description": "Application code security rules for the bc-security reviewer: injection, auth, access control, multitenancy, SSRF, deserialization, XSS and crypto."
+    },
+    {
+      "name": "bc-security-secrets",
+      "source": "./plugins/bc-security-secrets",
+      "description": "Secrets and supply-chain hygiene rules for the bc-security reviewer: hardcoded credentials, committed .env files, lockfiles, version pinning, typosquatting, non-standard sources and install scripts."
+    },
+    {
+      "name": "bc-security-infra",
+      "source": "./plugins/bc-security-infra",
+      "description": "Infrastructure security rules for the bc-security reviewer: Dockerfile hardening, Docker Compose exposure and GitHub Actions permissions, pinning, pull_request_target, script injection and log leaks."
+    },
+    {
+      "name": "bc-security-ai",
+      "source": "./plugins/bc-security-ai",
+      "description": "AI agent and LLM application security rules for the bc-security reviewer: prompt injection, LLM output handling, excessive agency, MCP server configuration, hidden instructions in skills and plugins, malicious hooks and secrets in system prompts."
+    }
+  ]
+}

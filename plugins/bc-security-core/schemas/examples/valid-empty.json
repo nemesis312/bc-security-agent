@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "tool": { "name": "bc-security", "version": "0.1.0" },
+  "language": "es",
+  "scan": {
+    "mode": "changes",
+    "base": null,
+    "generated_at": "2026-11-07T12:00:00Z",
+    "files_reviewed": [],
+    "domains_used": ["general"],
+    "domains_missing": ["code", "secrets", "infra", "ai"]
+  },
+  "summary": { "critical": 0, "high": 0, "medium": 0, "low": 0, "info": 0, "to_verify": 0 },
+  "findings": []
+}

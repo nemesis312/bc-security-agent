@@ -1,0 +1,11 @@
+{
+  "name": "bc-security-infra",
+  "version": "0.1.0",
+  "description": "Infrastructure security rules (Dockerfile, Docker Compose, GitHub Actions) for the bc-security reviewer.",
+  "author": {
+    "name": "Lesther Ruiz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nemesis312/bc-security-agent",
+  "dependencies": ["bc-security-core"]
+}

@@ -1,0 +1,50 @@
+name: Bug report
+description: Something in a bc-security plugin does not work as documented.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste real secrets or private code. Redact them first.
+        To report a vulnerability in this project, use private vulnerability reporting (see SECURITY.md), not an issue.
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin
+      options:
+        - bc-security-core
+        - bc-security-code
+        - bc-security-secrets
+        - bc-security-infra
+        - bc-security-ai
+        - marketplace / other
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: claude-code-version
+    attributes:
+      label: Claude Code version
+      description: Output of `claude --version`.
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you ran (for example `/bc-security-core:security-review changes`), what you expected and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true

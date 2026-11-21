@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "tool": {
+    "name": "bc-security",
+    "version": "0.1.0"
+  },
+  "language": "en",
+  "scan": {
+    "mode": "branch",
+    "base": "main",
+    "generated_at": "2026-11-07T12:00:00Z",
+    "files_reviewed": [
+      "src/example/app.js",
+      "src/example/chat.js"
+    ],
+    "domains_used": [
+      "code",
+      "ai",
+      "general"
+    ],
+    "domains_missing": [
+      "secrets",
+      "infra"
+    ]
+  },
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 0,
+    "to_verify": 1
+  },
+  "findings": [
+    {
+      "id": "F-001",
+      "rule_id": "BCS-CODE-001",
+      "title": "Query built by string concatenation",
+      "domain": "code",
+      "severity": "high",
+      "confidence": "high",
+      "standards": {
+        "owasp_top10": "A03:2021",
+        "cwe": [
+          "CWE-89"
+        ],
+        "asvs": "V5.3.4 (L1)"
+      },
+      "location": {
+        "file": "src/example/app.js",
+        "line_start": 10,
+        "line_end": 12
+      },
+      "evidence": "The query string is concatenated with a request parameter (example only).",
+      "impact": "An attacker could alter the query and read or modify data.",
+      "remediation": "Use parameterized queries."
+    },
+    {
+      "id": "F-002",
+      "rule_id": "BCS-AI-002",
+      "title": "Model output passed to a command without validation",
+      "domain": "ai",
+      "severity": "medium",
+      "cvss": {
+        "version": "3.1",
+        "score": 5.0,
+        "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L"
+      },
+      "confidence": "low",
+      "standards": {
+        "owasp_llm": "LLM05:2025",
+        "cwe": [
+          "CWE-94",
+          "CWE-77"
+        ]
+      },
+      "location": {
+        "file": "src/example/chat.js",
+        "line_start": 40,
+        "line_end": 40
+      },
+      "evidence": "Model response appears to flow into a shell helper (example only).",
+      "impact": "If the output is attacker-influenced, arbitrary commands could run.",
+      "remediation": "Validate model output against an allowlist before use."
+    }
+  ]
+}

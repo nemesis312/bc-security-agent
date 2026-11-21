@@ -1,0 +1,11 @@
+{
+  "name": "bc-security-ai",
+  "version": "0.1.0",
+  "description": "AI agent and LLM application security rules (prompt injection, output handling, excessive agency, MCP config, malicious skills and hooks, system prompt secrets) for the bc-security reviewer.",
+  "author": {
+    "name": "Lesther Ruiz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nemesis312/bc-security-agent",
+  "dependencies": ["bc-security-core"]
+}

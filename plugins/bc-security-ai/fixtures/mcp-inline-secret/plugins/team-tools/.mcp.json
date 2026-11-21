@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tickets": {
+      "command": "npx",
+      "args": ["-y", "@example-org/mcp-tickets@1.4.2"],
+      "env": {
+        "TICKETS_API_TOKEN": "tkt_live_9Fh3Qa7Wm2Zx5Lc8Rv1Tb4Nj6Pk0Ds"
+      }
+    }
+  }
+}

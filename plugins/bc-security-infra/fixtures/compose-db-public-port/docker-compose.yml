@@ -1,0 +1,15 @@
+# bc-security fixture: the image digest below is synthetic (repeated pattern), not a real image.
+services:
+  db:
+    image: postgres:16.2-alpine@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set it in the deploy environment}
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+volumes:
+  dbdata:

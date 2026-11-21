@@ -1,0 +1,11 @@
+{
+  "name": "bc-security-secrets",
+  "version": "0.1.0",
+  "description": "Secrets and supply-chain hygiene rules (hardcoded credentials, committed .env files, lockfiles, version pinning, typosquatting, non-standard sources, install scripts) for the bc-security reviewer.",
+  "author": {
+    "name": "Lesther Ruiz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nemesis312/bc-security-agent",
+  "dependencies": ["bc-security-core"]
+}

@@ -1,0 +1,48 @@
+name: New rule proposal
+description: Propose a detection rule for one of the domain plugins.
+title: "rule: "
+labels: ["new-rule"]
+body:
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - code (BCS-CODE)
+        - secrets (BCS-SEC)
+        - infra (BCS-INFRA)
+        - ai (BCS-AI)
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Rule title
+    validations:
+      required: true
+  - type: textarea
+    id: what-to-look-for
+    attributes:
+      label: What to look for
+      description: "The pattern, and why it is a security problem. Static review only (no scanners, no network)."
+    validations:
+      required: true
+  - type: textarea
+    id: standards
+    attributes:
+      label: Standards mapping
+      description: CWE, plus OWASP Top 10 2021, ASVS or OWASP LLM Top 10 2025 where it applies.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Vulnerable and clean examples
+      description: Small synthetic snippets. Never paste real secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: false-positives
+    attributes:
+      label: Known false positives
+      description: Cases that look similar but are safe.

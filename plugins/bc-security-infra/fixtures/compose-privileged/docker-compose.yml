@@ -1,0 +1,10 @@
+# bc-security fixture: the image digest below is synthetic (repeated pattern), not a real image.
+services:
+  agent:
+    image: ghcr.io/example/metrics-agent:1.4.2@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+    user: "10001:10001"
+    privileged: true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:9100/health"]
+      interval: 30s

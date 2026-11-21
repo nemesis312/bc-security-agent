@@ -1,0 +1,30 @@
+{
+  "name": "bc-security-core",
+  "version": "0.1.0",
+  "description": "Read-only security review agent, report format and optional hooks for the bc-security marketplace.",
+  "author": {
+    "name": "Lesther Ruiz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nemesis312/bc-security-agent",
+  "userConfig": {
+    "hook_sensitive_edits": {
+      "type": "boolean",
+      "title": "Notify on sensitive edits",
+      "description": "Show a notice suggesting a security review after Claude edits a security-sensitive file (auth, secrets, Docker, CI, dependency manifests, skills, hooks).",
+      "default": false
+    },
+    "hook_pre_commit": {
+      "type": "boolean",
+      "title": "Ask before git commit",
+      "description": "Ask for confirmation before a git commit so you can run a security review of the staged changes first. Never blocks the commit.",
+      "default": false
+    },
+    "save_automatic_reports": {
+      "type": "boolean",
+      "title": "Save automatic reports",
+      "description": "Ask to save the report under .security/reports/ after every review, not only explicit ones.",
+      "default": false
+    }
+  }
+}

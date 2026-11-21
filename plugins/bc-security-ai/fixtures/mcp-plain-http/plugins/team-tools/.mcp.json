@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tickets": {
+      "type": "http",
+      "url": "http://tickets.example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${TICKETS_API_TOKEN}"
+      }
+    }
+  }
+}

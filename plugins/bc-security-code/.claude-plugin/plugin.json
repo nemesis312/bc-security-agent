@@ -1,0 +1,11 @@
+{
+  "name": "bc-security-code",
+  "version": "0.1.0",
+  "description": "Application code security rules (injection, authentication, access control, multitenancy, SSRF, deserialization, XSS, cryptography) for the bc-security reviewer.",
+  "author": {
+    "name": "Lesther Ruiz"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nemesis312/bc-security-agent",
+  "dependencies": ["bc-security-core"]
+}

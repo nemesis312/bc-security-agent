@@ -1,0 +1,19 @@
+# bc-security fixture: the SHA below is synthetic (repeated pattern), not a real commit.
+name: deploy
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    environment: production
+    steps:
+      - uses: actions/checkout@0123456789abcdef0123456789abcdef01234567 # v4.1.1 (synthetic SHA)
+      - name: Deploy
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          set -x
+          echo "$DEPLOY_TOKEN" | base64
+          ./scripts/deploy.sh

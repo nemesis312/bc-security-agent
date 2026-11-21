@@ -1,0 +1,3 @@
+{"name":"bc-security","plugins":[
+ {"name":"bc-security-core","source":"./plugins/bc-security-core","description":"core"},
+ {"name":"bc-security-codez","source":"./plugins/bc-security-code","description":"code"}]}

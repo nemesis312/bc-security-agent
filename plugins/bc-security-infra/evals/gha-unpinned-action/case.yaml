@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: gha-unpinned-action
+context:
+  scaffold_script: scaffold.sh

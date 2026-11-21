@@ -1,0 +1,15 @@
+# bc-security fixture: the SHAs below are synthetic (repeated pattern), not real commits.
+name: ci
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@0123456789abcdef0123456789abcdef01234567 # v4.1.1 (synthetic SHA)
+      - uses: actions/setup-node@0123456789abcdef0123456789abcdef01234567 # v4.0.2 (synthetic SHA)
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test

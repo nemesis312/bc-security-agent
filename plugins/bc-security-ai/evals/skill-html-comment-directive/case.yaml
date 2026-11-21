@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: skill-html-comment-directive
+context:
+  scaffold_script: scaffold.sh

@@ -1,0 +1,22 @@
+# The digests here and in the Dockerfile are synthetic (repeated pattern), not real images.
+services:
+  app:
+    build: .
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:3000:3000"
+  db:
+    image: postgres:16.2-alpine@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set it in the deploy environment}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
